@@ -45,7 +45,7 @@ const Booking = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/bookings", formData);
+      const response = await axios.post(`http://localhost:5000/api/bookings`, formData);
       setFormData({ date: "", time: "", guests: "", name: "", contact: "" });
       toast.success(response.data.message || "Booking successful!", toastOption);
 

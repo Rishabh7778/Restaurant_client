@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/bookings");
+      const response = await axios.get(`http://localhost:5000/api/bookings`);
       setBookings(response.data);
       setError("");
     } catch (err) {
