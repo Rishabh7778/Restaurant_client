@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import Succesfully from "./Succesfully";
-import shef from '../assets/shef.png';
+import chef from '../assets/shef.png';
 import Navbar from './Navbar'
 import { useTitle } from "./UseTitle";
 
@@ -71,7 +71,7 @@ const Booking = () => {
 
         <div className="flex items-center flex-col justify-center mt-4 p-4 md:w-1/2">
           <img
-            src={shef}
+            src={chef}
             alt="shef-image"
             className="w-auto h-auto max-w-full max-h-[500px] object-cover rounded-lg hidden md:block"
           />
