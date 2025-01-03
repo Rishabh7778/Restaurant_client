@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import home from '../assets/home.jpg';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
@@ -6,10 +6,11 @@ import { useTitle } from './UseTitle';
 
 
 const Home = () => {
+    // title
     useTitle("Home");
     return (
         <div>
-           <Navbar/>
+           <Navbar/> 
             <div className="h-screen w-full overflow-hidden flex items-center justify-center relative">
                 <img
                     src={home}
