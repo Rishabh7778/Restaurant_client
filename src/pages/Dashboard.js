@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/bookings`);
+      const response = await axios.get(`https://restaurant-server-n7hh.onrender.comapi/bookings`);
       setBookings(response.data);
       setError("");
     } catch (err) {
@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   const deleteBooking = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/bookings/${id}`);
+      await axios.delete(`https://restaurant-server-n7hh.onrender.comapi/bookings/${id}`);
       fetchBookings();
       toast.success("Successfully Deleted", toastOption);
     } catch (err) {
