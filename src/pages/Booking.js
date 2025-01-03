@@ -3,10 +3,11 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import Succesfully from "./Succesfully";
+import Succesfully from "../pages/Succesfully";
 import chef from '../assets/shef.png';
-import Navbar from './Navbar'
-import { useTitle } from "./UseTitle";
+import Navbar from '../pages/Navbar'
+import { useTitle } from "../pages/UseTitle";
+import { BASE_URL } from "../service/helper";
 
 const Booking = () => {
   useTitle("Table-Book")
@@ -45,7 +46,7 @@ const Booking = () => {
     }
 
     try {
-      const response = await axios.post(`https://restaurant-server-n7hh.onrender.comapi/bookings`, formData);
+      const response = await axios.post(`${BASE_URL}/api/bookings`, formData);
       setFormData({ date: "", time: "", guests: "", name: "", contact: "" });
       toast.success(response.data.message || "Booking successful!", toastOption);
 

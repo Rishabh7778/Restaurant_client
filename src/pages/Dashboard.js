@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Navbar";
+import { BASE_URL } from "../service/helper";
 import { useTitle } from "./UseTitle";
 
 const toastOption = {
@@ -20,7 +21,7 @@ const Dashboard = () => {
 
   const fetchBookings = useCallback(async () => {
     try {
-      const response = await axios.get(`https://restaurant-server-n7hh.onrender.comapi/bookings`);
+      const response = await axios.get(`${BASE_URL}/api/bookings`);
       setBookings(response.data);
       setError("");
     } catch (err) {
@@ -36,7 +37,7 @@ const Dashboard = () => {
 
   const deleteBooking = async (id) => {
     try {
-      await axios.delete(`https://restaurant-server-n7hh.onrender.comapi/bookings/${id}`);
+      await axios.delete(`${BASE_URL}/api/bookings/${id}`);
       fetchBookings();
       toast.success("Successfully Deleted", toastOption);
     } catch (err) {
